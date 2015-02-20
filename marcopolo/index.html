@@ -989,7 +989,7 @@ var top3 = windowHeight - (2.1/8)*windowHeight;
 var top4 = windowHeight + (0.5/8)*windowHeight;
 
 var mouseX = 100;
-var mouseY = 500;
+var mouseY = 100;
 
 /*jQuery('#wrapper').ready(function(){
    $('#wrapper').mousemove(function(e){
@@ -1007,7 +1007,7 @@ var mouseY = 500;
 	window.ondeviceorientation = function(event) {
 			
 			//setInterval(function() {
-				mouseX = -5*Math.round(event.gamma) + 450; //is tussen -90 en 90, moet tussen 0 en 1000 worden
+				mouseX = -10*Math.round(event.gamma) + 900; //is tussen -90 en 90, moet tussen 0 en 1000 worden
 				mouseY = -10*Math.round(event.beta) + 900; //is tussen -90 en 90
 			//}, 5);
 		}
