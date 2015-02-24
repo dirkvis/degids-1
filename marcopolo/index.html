@@ -265,9 +265,17 @@ var mouseY = 500;
 	window.ondeviceorientation = function(event) {
 			
 			//setInterval(function() {
-				mouseX = -10*Math.round(event.gamma) + 900; //is tussen -90 en 90, moet tussen 0 en 1000 worden
-				mouseY = -5*Math.round(event.beta) + 445; //is tussen -90 en 90
-			//}, 5);
+			if (event.gamma >= 0) {
+				mouseX = 10*Math.round(Math.min(45, event.gamma)) + 450; //is tussen -90 en 90, moet tussen 0 en 1000 worde
+			} else {
+				mouseX = -10*Math.round(Math.max(-45, event.gamma)) + 450; //is tussen -90 en 90, moet tussen 0 en 1000 worde
+			}
+			
+			if (event.beta >= 0) {
+				mouseY = 5*Math.round(Math.min(45, event.beta)) + 445; //is tussen -90 en 90
+			} else {
+				mouseY = -5*Math.round(Math.max(-45, event.beta)) + 445; //is tussen -90 en 90
+			}
 		}
 
 $(window).load(gaanBanaan1());
