@@ -112,6 +112,14 @@ div#wrapper {
 .interstate {
 	font-family:interstate;	
 }
+
+#glas {
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
 </style>
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script type="text/javascript" src="http://cdn.sanwebe.com/wp-content/themes/sanwebe/js/jquery-1.10.2.min.js"></script> <!-- gyro -->
@@ -203,6 +211,8 @@ div#wrapper {
 
 </div>
 
+<div id="glas"></div>
+
 <script type="text/javascript">
 			
 			
@@ -266,15 +276,15 @@ var mouseY = 500;
 			
 			//setInterval(function() {
 			if (event.gamma >= 0) {
-				mouseX = 10*Math.round(Math.min(45, event.gamma)) + 450; //is tussen -90 en 90, moet tussen 0 en 1000 worde
+				mouseX = -10*Math.round(Math.min(45, event.gamma)) + 450; //is tussen -90 en 90, moet tussen 0 en 1000 worde
 			} else {
-				mouseX = 10*Math.round(Math.max(-45, event.gamma)) + 450; //is tussen -90 en 90, moet tussen 0 en 1000 worde
+				mouseX = -10*Math.round(Math.max(-45, event.gamma)) + 450; //is tussen -90 en 90, moet tussen 0 en 1000 worde
 			}
 			
 			if (event.beta >= 0) {
-				mouseY = 5*Math.round(Math.min(45, event.beta)) + 445; //is tussen -90 en 90
+				mouseY = -5*Math.round(Math.min(45, event.beta)) + 445; //is tussen -90 en 90
 			} else {
-				mouseY = 5*Math.round(Math.max(-45, event.beta)) + 445; //is tussen -90 en 90
+				mouseY = -5*Math.round(Math.max(-45, event.beta)) + 445; //is tussen -90 en 90
 			}
 		}
 
