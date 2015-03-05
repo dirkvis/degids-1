@@ -125,6 +125,12 @@ var mouseX = 100;
 var mouseY = 500;
 
 
+window.ondeviceorientation = function(event) {	
+		var top1 = windowHeight;
+		image1.css({ fontSize: (top1 + "px") });
+}
+
+
 $(window).load(gaanBanaan());
 
 function gaanBanaan () {
