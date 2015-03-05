@@ -31,22 +31,20 @@ div.blocks {
    float: left;
    margin-right:10px;
    letter-spacing: -0.2em;
-   background-color: yellow;
 }
 
 div.block1 {
    position: absolute;
    top:0px;
    left: 2000px;
-   width:70000px;
+   width:180000px;
    font-family:wingdings1;
    font-size:600px;
-   background-color:pink;
 }
 
 div#wrapper {
 	height:100%;
-	width:12500px;
+	width:200000px;
 	overflow:visible;
 }
 
@@ -72,25 +70,25 @@ div#wrapper {
   
 <div class="block1">
 	<div class="blocks">=<span class="interstate">h</span> == === ======= =</div> 
-	<div class="blocks">= = = = = = = = = = = = = = =</div>
-    <div class="blocks">= = = = = = = = = = = = = = =</div>
-    <div class="blocks">= = = = = = = = = = = = = = =</div>
-    <div class="blocks">= = = = = = = = = = = = = = =</div>
-    <div class="blocks">= = = = = = = = = = = = = = =</div>
-    <div class="blocks">= = = = = = = = = = = = = = =</div>
-    <div class="blocks">= = = = = = = = = = = = = = =</div>
-    <div class="blocks">= = = = = = = = = = = = = = =</div>
-    <div class="blocks">= = = = = = = = = = = = = = =</div>
-    <div class="blocks">= = = = = = = = = = = = = = =</div>
-	<div class="blocks">= = = = = = = = = = = = = = =</div>
-    <div class="blocks">= = = = = = = = = = = = = = =</div>
-    <div class="blocks">= = = = = = = = = = = = = = =</div>
-    <div class="blocks">= = = = = = = = = = = = = = =</div>
-    <div class="blocks">= = = = = = = = = = = = = = =</div>
-    <div class="blocks">= = = = = = = = = = = = = = =</div>
-    <div class="blocks">= = = = = = = = = = = = = = =</div>
-    <div class="blocks">= = = = = = = = = = = = = = =</div>
-    <div class="blocks">= = = = = = = = = = = = = = =</div>
+	<div class="blocks">=<span class="interstate">2</span> == === ======= =</div>
+    <div class="blocks">=<span class="interstate">3</span> == === ======= =</div>
+    <div class="blocks">=<span class="interstate">4</span> == === ======= =</div>
+    <div class="blocks">=<span class="interstate">5</span> == === ======= =</div>
+    <div class="blocks">=<span class="interstate">6</span> == === ======= =</div>
+    <div class="blocks">=<span class="interstate">7</span> == === ======= =</div>
+    <div class="blocks">=<span class="interstate">8</span> == === ======= =</div>
+    <div class="blocks">=<span class="interstate">9</span> == === ======= =</div>
+    <div class="blocks">=<span class="interstate">10</span> == === ======= =</div>
+    <div class="blocks">=<span class="interstate">11</span> == === ======= =</div>
+	<div class="blocks">=<span class="interstate">12</span> == === ======= =</div>
+    <div class="blocks">=<span class="interstate">13</span> == === ======= =</div>
+    <div class="blocks">=<span class="interstate">14</span> == === ======= =</div>
+    <div class="blocks">=<span class="interstate">15</span> == === ======= =</div>
+    <div class="blocks">=<span class="interstate">16</span> == === ======= =</div>
+    <div class="blocks">=<span class="interstate">17</span> == === ======= =</div>
+    <div class="blocks">=<span class="interstate">18</span> == === ======= =</div>
+    <div class="blocks">=<span class="interstate">19</span> == === ======= =</div>
+    <div class="blocks">=<span class="interstate">20</span> == === ======= =</div>
     <div class="blocks"><span class="interstate">ik wil met je stromen</span></div>
 </div>
 
@@ -128,8 +126,10 @@ var bovenGrens = 60;
 var onderGrens = 0;
 
 //var top1 = windowHeight/4;
+var top1 = windowHeight;
 
 //image1.css({ top: (top1 + "px") });
+image1.css({ fontSize: (top1 + "px") });
 
 var mouseX = 100;
 var mouseY = 500;
@@ -146,11 +146,11 @@ image1.animate(
 		duration: 100000,
 		easing: 'linear',
 		complete: function() {
-			gaanBanaan1();
+			gaanBanaan();
     },
 	step: function(){
 						
-				var speedX = 0.1;
+				var speedX = 0.5;
  
       			 //$('#status').html(mouseX);
       			 
