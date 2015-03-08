@@ -37,7 +37,7 @@ div.block1 {
    position: absolute;
    top:0px;
    left: 2000px;
-   width:180000px;
+   width:100000px;
    font-family:wingdings1;
    font-size:600px;
 }
@@ -78,7 +78,7 @@ div#wrapper {
     <div class="blocks">=<span class="interstate">7</span> == === ======= =</div>
     <div class="blocks">=<span class="interstate">8</span> == === ======= =</div>
     <div class="blocks">=<span class="interstate">9</span> == === ======= =</div>
-    
+    <div class="blocks">=<span class="interstate">10</span> == === ======= =</div>    
 </div>
 
 </div>
@@ -130,8 +130,11 @@ window.ondeviceorientation = function(event) {
 		image1.css({ fontSize: (top1 + "px") });
 }
 
+setTimeout(function(){ 
+	$(window).load(gaanBanaan());
+ }, 10000);
 
-$(window).load(gaanBanaan());
+
 
 function gaanBanaan () {
 image1.animate(
