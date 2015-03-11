@@ -44,6 +44,8 @@ var h = window.innerHeight
 			
 jQuery.fx.interval = 25;
 
+var woorden = new Array("ik", "wil", "je", "stroom", "o", "O", "0", "oh", "Oh");
+
 $(document).ready(function(){
 	$("#button").css("width", w);
 	$("#button").css("height", h);
@@ -68,12 +70,35 @@ $(document).ready(function(){
 			   	}, 3000);
 			}
 		}, 3500);
+		setTimeout(function(){
+	 		$("#button").animate({
+		 		opacity: "1",
+		 		color: "black"
+		 	}, 3000);
+		 	//setTimeout(go_woorden(), 3500);
+		 	go_woorden();
+		 	adem.play();
+		}, 10000)
 	});
 });
+
+function go_woorden(){
+ 	setInterval(function(){
+ 		var willekeurig = Math.floor(woorden.length*Math.random());
+ 		$("#woord").html(woorden[willekeurig]);
+ 		$('#button').textfill({
+	    	minFontPixels: 50,
+			maxFontPixels: 5000
+	    });
+ 	}, 7000)
+}
 
 </script>
 </head>
 <body>
-<div id="button"><span>Oh</span></div><div class="helper"></div>
+<div id="button"><span id="woord">.</span></div><div class="helper"></div>
+<audio id="adem" style="display:none;" loop="loop">
+    <source src="adem.mp3" type="audio/mpeg" />
+</audio>
 </body>
 </html>
