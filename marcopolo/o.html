@@ -99,7 +99,7 @@ function go_woorden(){
  	setInterval(function(){
  		var willekeurig = Math.floor(woorden.length*Math.random());
  		$("#woord").html(woorden[willekeurig]);
- 		var hoogteverschil = 40*(woorden[willekeurig].length)-60; 
+ 		var hoogteverschil = 30*(woorden[willekeurig].length)-40; 
  		$("#button").css("margin-top", hoogteverschil);
  		$('#button').textfill({
 	    	minFontPixels: 50,
