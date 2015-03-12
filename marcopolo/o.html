@@ -7,8 +7,17 @@
   <style>
 
 @font-face {
-font-family: interstate;
-src: url('fonts/interstate-bold.ttf');
+	font-family: interstate;
+	src: url('fonts/interstate-bold.ttf');
+}
+
+@font-face {
+	font-family: webdings;
+	src: url('fonts/webdings.eot'); /* IE9 Compatibility Modes */
+	src: url('fonts/webdings.eot?') format('eot'),  /* IE6-IE8 */
+	url('fonts/webdings.woff') format('woff'), /* Modern Browsers */
+	url('fonts/webdings.ttf')  format('truetype'), /* Safari, Android, iOS */
+	url('fonts/webdings.svg#svgwebdings') format('svg'); /* Legacy iOS */
 }
 
 body {
@@ -24,8 +33,16 @@ body {
 	color: #80e1ff;
 	opacity: 1;
 	text-align: center;
+	width:90%;
+	height:90%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.wrapper {
 	width:100%;
 	height:100%;
+	text-align: center;
 }
 
 </style>
@@ -76,7 +93,7 @@ var h = window.innerHeight
 			
 jQuery.fx.interval = 25;
 
-var woorden = new Array("o", "O", "Oo", "OOO", "Oh", ".", "hh", "...", "Hhh", "Ooo", "ooooh", "Oooh");
+var woorden = new Array( "nn", "O", "n", "oh", "hh", "OO", "OOO", "ok", "bol", "ho", "rol", "wil", "4", "44", ")");
 
 var alGeklikt = 0;
 var beeldAdemen = null;
@@ -84,11 +101,11 @@ var beeldAdemenNieuw = null;
 var woordenGaan = null;
 
 $(document).ready(function(){
-	$("#button").css("width", w);
-	$("#button").css("height", h);
+	$("#button").css("width", 0.9*w);
+	$("#button").css("height", 0.9*h);
 	$('#button').textfill({
 	    minFontPixels: 50,
-	    maxFontPixels: 5000
+	    maxFontPixels: 4000
 	});
 	//textFit(document.getElementById('button'), {alignVert: true});
 
@@ -108,19 +125,21 @@ $(document).ready(function(){
 			 	}, 3000);
 			 	//adem.play();
 			}, 3000)
-			woordenGaan = window.setInterval(function(){ go_woorden() }, 7000);
+			//setTimeout(function() {
+				woordenGaan = window.setInterval(function(){ go_woorden() }, 7000);
+			//}, 3500);
 		} else if (alGeklikt==3) {
 			clearInterval(beeldAdemenNieuw);
 			clearInterval(woordenGaan);
 			setTimeout(function(){
 		 		$("body").animate({
 			 		backgroundColor: "rgb(0, 0, 0)"
-			 	}, 1000);
+			 	}, 3000);
 		 		$("#button").animate({
 			 		opacity: "0"
-			 	}, 1000);
-			 	adem.pause();
-			 	adem.currentTime = 0;
+			 	}, 3000);
+			 	//adem.pause();
+			 	//adem.currentTime = 0;
 			}, 3000)
 		}
 	});
@@ -142,21 +161,28 @@ function ademGaan() {
 function go_woorden(){
 	var willekeurig = Math.floor(woorden.length*Math.random());
 	$("#woord").html(woorden[willekeurig]);
-	var hoogteverschil = 30*(woorden[willekeurig].length)-40; 
-	$("#button").css("margin-top", hoogteverschil);
+	if(woorden[willekeurig]=="nn" || woorden[willekeurig]=="n" || woorden[willekeurig]=="nnn" || woorden[willekeurig]=="nnnn" || woorden[willekeurig]=="4" || woorden[willekeurig]=="44" || woorden[willekeurig]==")") {
+		$("#button").css("font-family", "webdings");
+	} else {
+		$("#button").css("font-family", "interstate");
+	}
 	$('#button').textfill({
     	minFontPixels: 50,
-		maxFontPixels: 5000
+		maxFontPixels: 4000
     });
+	var hoogteverschil = 30*(woorden[willekeurig].length); 
+	$("#button").css("margin-top", hoogteverschil);
 	$.mbAudio.play('effectSprite', 'ademen');
 }
 
 </script>
 </head>
 <body>
-<div id="button" onclick="$(document).trigger('initAudio')"><span id="woord">.</span></div>
+<div id="wrapper">
+<div id="button" onclick="$(document).trigger('initAudio')"><span id="woord"><span style="font-family:webdings;font-size:75%;">n</span></span></div>
 <audio id="adem" style="display:none;" loop="loop">
     <source src="adem.mp3" type="audio/mpeg" />
 </audio>
+</div>
 </body>
 </html>
