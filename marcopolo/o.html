@@ -32,6 +32,37 @@ body {
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="jquery.animate-colors-min.js"></script>
 <script src="jquery.textfill.js"></script>
+<script src="jquery.mb.audio.js"></script>
+
+<script type="text/javascript">
+
+/*
+ * DEFINE SOUNDS
+ */
+$.mbAudio.sounds = {
+
+    effectSprite: {
+        id: "adem",
+        mp3: "adem.mp3",
+        //example of sprite
+        sprite:{
+            ademen: {id: "ademen", start: 0, end: 20, loop: 2}
+        }
+    }
+};
+
+
+function audioIsReady(){
+
+}
+
+$(document).on("initAudio", function () {
+
+    //otherwise sound is initialized on the first tap loosing time and UX
+     $.mbAudio.pause('effectSprite', audioIsReady);
+});
+
+</script>
 
 <script type="text/javascript">
 
@@ -75,7 +106,8 @@ $(document).ready(function(){
 		 		$("#button").animate({
 			 		opacity: "1"
 			 	}, 3000);
-			 	adem.play();
+			 	//adem.play();
+			 	$.mbAudio.play('effectSprite', 'ademen');
 			}, 3000)
 			woordenGaan = window.setInterval(function(){ go_woorden() }, 7000);
 		} else if (alGeklikt==3) {
@@ -122,7 +154,7 @@ function go_woorden(){
 </script>
 </head>
 <body>
-<div id="button"><span id="woord">.</span></div>
+<div id="button" onclick="$(document).trigger('initAudio')"><span id="woord">.</span></div>
 <audio id="adem" style="display:none;" loop="loop">
     <source src="adem.mp3" type="audio/mpeg" />
 </audio>
