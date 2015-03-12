@@ -21,7 +21,7 @@ body {
 #button {
 	cursor: pointer;
 	font-family: interstate;
-	color: white;
+	color: #80e1ff;
 	opacity: 1;
 	text-align: center;
 	width:100%;
@@ -45,9 +45,12 @@ var h = window.innerHeight
 			
 jQuery.fx.interval = 25;
 
-var woorden = new Array("stroom", "o", "O", "ik", "wil", "Ok", ".", "met", "in", "je", "Ooo", "ooooh", "Oooh");
+var woorden = new Array("o", "O", "Oo", "OOO", "Oh", ".", "hh", "...", "Hhh", "Ooo", "ooooh", "Oooh");
 
-var alGeklikt = false;
+var alGeklikt = 0;
+var beeldAdemen = null;
+var beeldAdemenNieuw = null;
+var woordenGaan = null;
 
 $(document).ready(function(){
 	$("#button").css("width", w);
@@ -59,54 +62,61 @@ $(document).ready(function(){
 	//textFit(document.getElementById('button'), {alignVert: true});
 
 	$("#button").click(function(){  
-		if (!alGeklikt) {
+		alGeklikt++;
+		if (alGeklikt==1) {
 		 	$("#button").animate({
 			 	opacity: "0"
 		 	}, 3000);
-		 	var beeldAdemen = setInterval(function(){ ademGaan() }, 3500);
-			alGeklikt = true;
-		} else {
+		 	beeldAdemen = window.setInterval(function(){ ademGaan() }, 3500);
+		} else if (alGeklikt==2) {
 			clearInterval(beeldAdemen);
-			var beeldAdemenNieuw = setInterval(function(){ ademGaan() }, 3500);
-			$("#woord").html(woorden[Math.floor(woorden.length*Math.random())]);
+			beeldAdemenNieuw = window.setInterval(function(){ ademGaan() }, 3500);
 			setTimeout(function(){
 		 		$("#button").animate({
-			 		opacity: "1",
-			 		color: "black"
+			 		opacity: "1"
 			 	}, 3000);
-			 	//setTimeout(go_woorden(), 3500);
 			 	adem.play();
-			}, 9000)
-			go_woorden();
+			}, 3000)
+			woordenGaan = window.setInterval(function(){ go_woorden() }, 7000);
+		} else if (alGeklikt==3) {
+			clearInterval(beeldAdemenNieuw);
+			clearInterval(woordenGaan);
+			setTimeout(function(){
+		 		$("body").animate({
+			 		backgroundColor: "rgb(0, 0, 0)"
+			 	}, 1000);
+		 		$("#button").animate({
+			 		opacity: "0"
+			 	}, 1000);
+			 	adem.pause();
+			 	adem.currentTime = 0;
+			}, 3000)
 		}
 	});
 });
 
 function ademGaan() {
 	var color = $("body").css( "background-color" );
-	if (color=="rgb(255, 255, 255)") {
+	if (color=="rgb(128, 225, 255)") {
 	 	$("body").animate({ 
 	 		backgroundColor: "rgb(0, 0, 0)"
 	 	}, 3000);
 	} else {
 	   	$("body").animate({ 
-	   		backgroundColor: "rgb(255, 255, 255)"
+	   		backgroundColor: "rgb(128, 225, 255)"
 	   	}, 3000);
 	}
 }
 
 function go_woorden(){
- 	setInterval(function(){
- 		var willekeurig = Math.floor(woorden.length*Math.random());
- 		$("#woord").html(woorden[willekeurig]);
- 		var hoogteverschil = 30*(woorden[willekeurig].length)-40; 
- 		$("#button").css("margin-top", hoogteverschil);
- 		$('#button').textfill({
-	    	minFontPixels: 50,
-			maxFontPixels: 5000
-	    });
-	    //textFit(document.getElementById('button'), {alignVert: true});
- 	}, 7000)
+	var willekeurig = Math.floor(woorden.length*Math.random());
+	$("#woord").html(woorden[willekeurig]);
+	var hoogteverschil = 30*(woorden[willekeurig].length)-40; 
+	$("#button").css("margin-top", hoogteverschil);
+	$('#button').textfill({
+    	minFontPixels: 50,
+		maxFontPixels: 5000
+    });
 }
 
 </script>
