@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <script src="textFit.min.js"></script>
+    <script>
+      function doFit(){
+        textFit(document.getElementById('button'), {alignHoriz: true, alignVert: true, minFontSize: 360});
+      }
+    </script>
+    <style>
+		 @font-face {
+		font-family: interstate;
+		src: url('fonts/interstate-bold.ttf');
+		}
+		
+		body {
+			background-color:black;
+			padding:0px;
+			margin:0px;
+			text-align: center;
+		}
+		
+		#button {
+			cursor: pointer;
+			font-family: interstate;
+			color: white;
+			opacity: 1;
+			text-align: center;
+			width:800px;
+			height:800px;
+			position: absolute;
+			font-size: 120px;
+			border:1px solid red;
+		}
+
+    </style>
+  </head>
+  <body>
+	  <div id="button">.</div>
+	    <script>
+      doFit()
+    </script>
+  </body>
+</html>

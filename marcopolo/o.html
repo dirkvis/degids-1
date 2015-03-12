@@ -32,6 +32,7 @@ body {
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="jquery.animate-colors-min.js"></script>
 <script src="jquery.textfill.js"></script>
+
 <script type="text/javascript">
 
 var w = window.innerWidth
@@ -44,7 +45,9 @@ var h = window.innerHeight
 			
 jQuery.fx.interval = 25;
 
-var woorden = new Array("ik", "wil", "je", "stroom", "o", "O", "0", "oh", "Oh");
+var woorden = new Array("stroom", "o", "O", "ik", "wil", "Ok", ".", "met", "in", "je", "Ooo", "ooooh", "Oooh");
+
+var alGeklikt = false;
 
 $(document).ready(function(){
 	$("#button").css("width", w);
@@ -53,50 +56,63 @@ $(document).ready(function(){
 	    minFontPixels: 50,
 	    maxFontPixels: 5000
 	});
+	//textFit(document.getElementById('button'), {alignVert: true});
 
 	$("#button").click(function(){  
-	 	$("#button").animate({
-		 	opacity: "0"
-	 	}, 3000);
-	    setInterval(function(){ 
-		   	var color = $("body").css( "background-color" );
-			if (color=="rgb(255, 255, 255)") {
-			 	$("body").animate({ 
-			 		backgroundColor: "rgb(0, 0, 0)"
-			 	}, 3000);
-			} else {
-			   	$("body").animate({ 
-			   		backgroundColor: "rgb(255, 255, 255)"
-			   	}, 3000);
-			}
-		}, 3500);
-		setTimeout(function(){
-	 		$("#button").animate({
-		 		opacity: "1",
-		 		color: "black"
+		if (!alGeklikt) {
+		 	$("#button").animate({
+			 	opacity: "0"
 		 	}, 3000);
-		 	//setTimeout(go_woorden(), 3500);
-		 	go_woorden();
-		 	adem.play();
-		}, 10000)
+		 	var beeldAdemen = setInterval(function(){ ademGaan() }, 3500);
+			alGeklikt = true;
+		} else {
+			clearInterval(beeldAdemen);
+			var beeldAdemenNieuw = setInterval(function(){ ademGaan() }, 3500);
+			$("#woord").html(woorden[Math.floor(woorden.length*Math.random())]);
+			setTimeout(function(){
+		 		$("#button").animate({
+			 		opacity: "1",
+			 		color: "black"
+			 	}, 3000);
+			 	//setTimeout(go_woorden(), 3500);
+			 	adem.play();
+			}, 9000)
+			go_woorden();
+		}
 	});
 });
+
+function ademGaan() {
+	var color = $("body").css( "background-color" );
+	if (color=="rgb(255, 255, 255)") {
+	 	$("body").animate({ 
+	 		backgroundColor: "rgb(0, 0, 0)"
+	 	}, 3000);
+	} else {
+	   	$("body").animate({ 
+	   		backgroundColor: "rgb(255, 255, 255)"
+	   	}, 3000);
+	}
+}
 
 function go_woorden(){
  	setInterval(function(){
  		var willekeurig = Math.floor(woorden.length*Math.random());
  		$("#woord").html(woorden[willekeurig]);
+ 		var hoogteverschil = 40*(woorden[willekeurig].length)-60; 
+ 		$("#button").css("margin-top", hoogteverschil);
  		$('#button').textfill({
 	    	minFontPixels: 50,
 			maxFontPixels: 5000
 	    });
+	    //textFit(document.getElementById('button'), {alignVert: true});
  	}, 7000)
 }
 
 </script>
 </head>
 <body>
-<div id="button"><span id="woord">.</span></div><div class="helper"></div>
+<div id="button"><span id="woord">.</span></div>
 <audio id="adem" style="display:none;" loop="loop">
     <source src="adem.mp3" type="audio/mpeg" />
 </audio>

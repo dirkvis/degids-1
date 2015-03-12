@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>O</title>
+  <style>
+
+@font-face {
+font-family: interstate;
+src: url('fonts/interstate-bold.ttf');
+}
+
+body {
+	background-color:black;
+	padding:0px;
+	margin:0px;
+	text-align: center;
+}
+
+#button {
+	cursor: pointer;
+	font-family: interstate;
+	color: white;
+	opacity: 1;
+	text-align: center;
+	width:1280px;
+	height:700px;
+	position: absolute;
+	font-size: 480px;
+}
+
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="jquery.animate-colors-min.js"></script>
+<script src="textFit.min.js"></script>
+<script src="jquery.textfill.js"></script>
+
+<script type="text/javascript">
+
+var w = window.innerWidth
+|| document.documentElement.clientWidth
+|| document.body.clientWidth;
+
+var h = window.innerHeight
+|| document.documentElement.clientHeight
+|| document.body.clientHeight;
+			
+jQuery.fx.interval = 25;
+
+//var woorden = new Array("ik", "wil", "je", "stroom", "o", "O", "0", "oh", "Oh");
+var woorden = new Array("stroom", "o", "Oh");
+
+
+$(document).ready(function(){
+	$("#button").css("width", w);
+	$("#button").css("height", h);
+	 
+	$('#button').textfill({
+	});
+	//textFit(document.getElementById('button'), {alignHoriz: true, alignVert: true, minFontSize: 360});
+
+	$("#button").click(function(){  
+	 	$("#button").animate({
+		 	opacity: "0"
+	 	}, 3000);
+	    setInterval(function(){ 
+		   	var color = $("body").css( "background-color" );
+			if (color=="rgb(255, 255, 255)") {
+			 	$("body").animate({ 
+			 		backgroundColor: "rgb(0, 0, 0)"
+			 	}, 3000);
+			} else {
+			   	$("body").animate({ 
+			   		backgroundColor: "rgb(255, 255, 255)"
+			   	}, 3000);
+			}
+		}, 3500);
+		setTimeout(function(){
+	 		$("#button").animate({
+		 		opacity: "1",
+		 		color: "black"
+		 	}, 3000);
+		 	//setTimeout(go_woorden(), 3500);
+		 	go_woorden();
+		 	adem.play();
+		}, 10000)
+	});
+});
+
+function go_woorden(){
+ 	setInterval(function(){
+ 		var willekeurig = Math.floor(woorden.length*Math.random());
+ 		$("#button").html(woorden[willekeurig]);
+ 		
+		$('#button').textfill({
+		});
+	 	//textFit(document.getElementById('button'), {alignHoriz: true, alignVert: true, minFontSize: 360});
+
+ 	}, 7000)
+}
+
+</script>
+</head>
+<body>
+<div id="button">.</div>
+<audio id="adem" style="display:none;" loop="loop">
+    <source src="adem.mp3" type="audio/mpeg" />
+</audio>
+</body>
+</html>
