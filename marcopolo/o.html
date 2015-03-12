@@ -107,7 +107,6 @@ $(document).ready(function(){
 			 		opacity: "1"
 			 	}, 3000);
 			 	//adem.play();
-			 	$.mbAudio.play('effectSprite', 'ademen');
 			}, 3000)
 			woordenGaan = window.setInterval(function(){ go_woorden() }, 7000);
 		} else if (alGeklikt==3) {
@@ -149,6 +148,7 @@ function go_woorden(){
     	minFontPixels: 50,
 		maxFontPixels: 5000
     });
+	$.mbAudio.play('effectSprite', 'ademen');
 }
 
 </script>
