@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+       <title>De Internet Gids</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.2.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+ 	<script type="text/javascript" src="cordova.js"></script>
+       
+        <script type="text/javascript">
+        	$(document).ready(function() {
+   window.setTimeout("fadeMyDiv();", 300); //call fade in 3 seconds
+ }
+)
+
+function fadeMyDiv() {
+   $(".logo").fadeOut('slow');
+}
+        </script>
+        
+    </head>
+    <body>
+        <div data-role="page">
+
+	<div data-role="header" data-position="fixed" data-fullscreen="true">
+	</div><!-- /header -->
+
+<div data-role="content">
+
+		<img src="img/logo-degids.jpg" class="logo" width="100px" height="100px"/>
+
+	<div class="menu">	
+		<a href="o/index.html" rel="external"><img src="img/g-rups.gif" class="logo-menu" height="64px" width="64px" /></a>
+		<ul data-role="listview" class="menu-items">
+			<li data-role="list-divider" data-theme="b"><a href="internetgids.html" rel="external">DE INTERNET GIDS</a></li>
+			<li data-theme="a"><a href="#" id="link1" rel="external" class="hoofdmenu"><img id="plaatje1" src="img/hetnieuwerijden.jpg" class="menu-plaatje"/><p id="titel1" class="titel">...</p><p class="auteur" id="auteur1">...</p></a></li>
+			<li data-theme="a"><a href="#" id="link2" rel="external" class="hoofdmenu"><img id="plaatje2" src="img/cube.jpg" class="menu-plaatje"/><p id="titel2" class="titel">...</p><p class="auteur" id="auteur2">...</p></a></li>
+			<li data-theme="a"><a href="#" id="link3" rel="external" class="hoofdmenu"><img id="plaatje3" src="img/detwintigste.jpg" class="menu-plaatje"/><p id="titel3" class="titel">...</p><p class="auteur" id="auteur3">...</p></a></li>
+			<li data-role="list-divider" data-theme="b"><a href="uitgelicht.html" rel="external">UITGELICHT</a></li>
+			<li data-role="list-divider" data-theme="b">VERHAAL VAN DE MAAND</li>
+			<li data-role="list-divider" data-theme="b">NIEUWS</li>
+			<li data-theme="b"><a href="huidignummer.html" rel="external"><img src="img/degids-letters.jpg" class="menu-plaatje-logo"/><p id="huidigeNummer" class="huidignummer"></p></li></a>
+			<li data-role="list-divider" data-theme="d"><a href="abonneren.html" rel="external">ABONNEREN</a></li>
+			<li data-role="list-divider" data-theme="d"><a href="colofon.html" rel="external">COLOFON</a></li>
+		</ul>
+	</div>
+		
+</div><!-- /content -->
+
+<div data-role="footer">
+</div>
+</div><!-- /page -->
+        <script type="text/javascript">
+            $.mobile.loadingMessage = false;
+				
+	$(document).ready(function(){
+	
+		$.ajaxSetup({ cache: false });
+		var url = 'http://www.de-gids.nl/rubriek/proza.json'; //moet dus de-internet-gids.json worden
+		$.getJSON(url, function(data) {
+
+		    $('#auteur1').html(data.channel.tags[0].articles[0].author);
+		    $('#plaatje1').attr("src", 	"http://www.de-gids.nl"+data.channel.image);
+			$('#titel1').html(data.channel.tags[0].articles[0].title);
+			$('#link1').attr("href", "single.html?id="+data.channel.tags[0].articles[0].id);
+			
+		    $('#auteur2').html(data.channel.tags[0].articles[1].author);
+		    $('#plaatje2').attr("src", 	"http://www.de-gids.nl"+data.channel.image);
+			$('#link2').attr("href", "single.html?id="+data.channel.tags[0].articles[1].id);
+			$('#titel2').html(data.channel.tags[0].articles[1].title);
+			
+		    $('#auteur3').html(data.channel.tags[0].articles[2].author);
+		    $('#plaatje3').attr("src", 	"http://www.de-gids.nl"+data.channel.image);
+			$('#titel3').html(data.channel.tags[0].articles[2].title);
+			$('#link3').attr("href", "single.html?id="+data.channel.tags[0].articles[2].id);
+
+		    $.ajaxSetup({ cache: true });
+		})
+		.fail(function() {
+		   	$('#titel2').html("foutje");
+		});
+		
+			$.ajaxSetup({ cache: false });
+		var url = 'http://www.de-gids.nl/pagina/35.json'; //moet dus de-internet-gids.json worden
+		$.getJSON(url, function(data) {
+
+		    $('#huidigeNummer').html(data.page.title);
+		    
+		    $.ajaxSetup({ cache: true });
+		})
+		.fail(function() {
+		   	$('#huidigeNummer').html("mislukt");
+		});
+			
+
+
+		/*$('#titel1').html('Loading');		
+		$.ajax({
+			url: 'http://www.de-gids.nl/rubriek/proza.json?callback=?',
+			type: 'GET',
+			dataType: 'jsonp',
+			crossDomain:true, 
+			timeout: 5000,
+			success: function(data) {
+				$('#titel2').html(data.channel.tags.articles[0].title);
+			},
+			error: function(){
+				$('#titel2').html('There was a foutje loading the feed');
+			}
+		});*/
+	});
+
+
+            
+          
+        </script>
+    </body>
+</html>
