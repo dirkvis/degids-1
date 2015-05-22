@@ -32,7 +32,8 @@
 	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.2.0.min.css" />
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
-        
+ 	<script type="text/javascript" src="cordova.js"></script>
+       
         <script type="text/javascript">
         	$(document).ready(function() {
    window.setTimeout("fadeMyDiv();", 300); //call fade in 3 seconds
@@ -55,14 +56,13 @@ function fadeMyDiv() {
 
 	<div class="menu-internetgids">	
 		<ul data-role="listview" class="menu-items">
-			<li data-role="list-divider" data-theme="e"><a href="index.html" rel="external">&#60;&ensp;DE INTERNET GIDS</a></li>
-			<li data-theme="c"><img src="img/01kroniek.jpg" class="menu-plaatje-internetgids"/><p>KRONIEK &amp; KRITIEK</p><p>&#62;</p></li>
-			<li data-theme="c"><a href="index.html" rel="external"><img src="img/01beeld.jpg" class="menu-plaatje-internetgids"/><p>BEELD &amp; GELUID</p><p>&#62;</p></a></li>
-			<li data-theme="c"><img src="img/01amp.jpg" class="menu-plaatje-internetgids"/><p>AMPERSAND</p><p>&#62;</p></li>
-			<li data-theme="c"><img src="img/01poezie.jpg" class="menu-plaatje-internetgids"/><p>DE POEZIE</p></li>
-			<li data-theme="c"><img src="img/01proza.jpg" class="menu-plaatje-internetgids"/><p>PROZA</p></li>
-			<li data-theme="c"><img src="img/01sign.jpg" class="menu-plaatje-internetgids"/><p>SIGNALEMENTEN</p></li>
-			<li data-theme="c"><img src="img/01gids.jpg" class="menu-plaatje-internetgids"/><p>GIDSFOSSIEL</p></li>
+			<li data-role="list-divider" data-theme="e" id="rubriekTitel"><a href="index.html" rel="external">&#60;&ensp;DE INTERNET GIDS</a></li>
+			<li data-theme="c"><a href="rubriek.html?rubriek=6" rel="external" class="rubriek"><img src="img/01kroniek.jpg" class="menu-plaatje-internetgids"/><p>KRONIEK &amp; KRITIEK</p></a></li>
+			<li data-theme="c"><a href="rubriek.html?rubriek=7" rel="external" class="rubriek"><img src="img/01beeld.jpg" class="menu-plaatje-internetgids"/><p>BEELD &amp; GELUID</p></a></li>
+			<li data-theme="c"><a href="rubriek.html?rubriek=3" rel="external" class="rubriek"><img src="img/01amp.jpg" class="menu-plaatje-internetgids"/><p>AMPERSAND</p></a></li>
+			<li data-theme="c"><a href="rubriek.html?rubriek=2" rel="external" class="rubriek"><img src="img/01poezie.jpg" class="menu-plaatje-internetgids"/><p>DE POEZIE</p></a></li>
+			<li data-theme="c"><a href="rubriek.html?rubriek=5" rel="external" class="rubriek"><img src="img/01proza.jpg" class="menu-plaatje-internetgids"/><p>PROZA</p></a></li>
+			<li data-theme="c"><a href="rubriek.html?rubriek=8" rel="external" class="rubriek"><img src="img/01gids.jpg" class="menu-plaatje-internetgids"/><p>GIDSFOSSIEL</p></a></li>
 		</ul>
 		<img src="img/logo-degids.jpg" class="logo-menu-internetgids" />
 	</div>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+       <title>Rubriek</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.2.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+ 	<script type="text/javascript" src="cordova.js"></script>
+       
+        <script type="text/javascript">
+        	$(document).ready(function() {
+   window.setTimeout("fadeMyDiv();", 300); //call fade in 3 seconds
+ }
+)
+
+			
+			function getParameterByName(name) {
+			    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+			    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+			        results = regex.exec(location.search);
+			    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+			
+			
+function fadeMyDiv() {
+   $(".logo").fadeOut('slow');
+}
+        </script>
+        
+    </head>
+    <body>
+        <div data-role="page">
+
+	<div data-role="header" data-position="fixed" data-fullscreen="true">
+	</div><!-- /header -->
+
+<div data-role="content">
+
+	<div class="menu-internetgids">	
+		<ul data-role="listview" class="menu-items" id="artikelen">
+			<li data-role="list-divider" data-theme="e"><a href="internetgids.html" rel="external" id="rubriekTitel">&#60;&ensp;RUBRIEK</a></li>
+		</ul>
+		<img src="img/logo-degids.jpg" class="logo-menu-internetgids" />
+	</div>
+		
+</div><!-- /content -->
+
+<div data-role="footer">
+</div>
+</div><!-- /page -->
+        <script type="text/javascript">
+            $.mobile.loadingMessage = false;
+            
+      $(document).ready(function(){
+         var idPost = getParameterByName('rubriek');
+	
+		$.ajaxSetup({ cache: false });
+		var url = 'http://www.de-gids.nl/rubriek/'+idPost+'.json'; 
+		$.getJSON(url, function(data) {
+	
+			$('#rubriekTitel').html("&#60;&ensp;" + data.channel.name);
+		
+			// als rubriek=ampersand=3 of is gidsfossiel=8 dan alle artikelen laden
+			// anders eerste artikel van alle tags laden
+		
+			
+			if (idPost==3 || idPost==8) {
+						
+				var hoeveelArtikelen = data.channel.tags[0].articles.length;
+				for (i=0;i<hoeveelArtikelen;i++) {
+					$('#artikelen').append('<li data-theme="a"><a href="single.html?id='+ data.channel.tags[0].articles[1].id +'" rel="external" class="hoofdmenu rubriekLink"><img src="http://www.de-gids.nl'+ data.channel.image +'" class="menu-plaatje"/><p class="titel">'+ data.channel.tags[0].articles[i].title +'</p><p class="auteur">'+ data.channel.tags[0].articles[i].author +'</p></a></li>');
+					
+				}
+				
+			} else {
+			
+				var hoeveelArtikelen = data.channel.tags.length;
+				for (i=0;i<hoeveelArtikelen;i++) {
+					$('#artikelen').append('<li data-theme="a"><a href="single.html?id='+ data.channel.tags[i].articles[0].id +'" rel="external" class="hoofdmenu rubriekLink"><img src="http://www.de-gids.nl'+ data.channel.image +'" class="menu-plaatje"/><p class="titel">'+ data.channel.tags[i].articles[0].title +'</p><p class="auteur">'+ data.channel.tags[i].articles[0].author +'</p></a></li>');
+					
+				}
+				
+			}
+			
+					
+						
+		    $.ajaxSetup({ cache: true });
+		}).fail(function(jqxhr, textStatus, error) {
+		   	$('#rubriekTitel').html(textStatus + ", " + error);
+		});
+		
+	
+	});
+        </script>
+    </body>
+</html>

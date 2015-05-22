@@ -12,25 +12,12 @@
     zoom:1
 }
 
-
-.logo {
-	position:fixed;
-	width:130px;
-	top:-30px;
-	left:-35px;
-	z-index:100;
-	border-left:130px solid white;
-	border-right:130px solid white;
-	border-top:250px solid white;
-	border-bottom:250px solid white;
-}
-
 .menu-items {
 	position:relative;
 	top:50px;
 }
 
-.menu-bakens {
+.menu-single, .menu-pagina {
 	display:inline-block;
 	position:relative;
 	top:-70px;
@@ -48,9 +35,20 @@
 	top:0px;
 }
 
+
+.logo {
+	position:fixed;
+	top:-30px;
+	left:-35px;
+	z-index:100;
+	border-left:130px solid white;
+	border-right:130px solid white;
+	border-top:250px solid white;
+	border-bottom:250px solid white;
+}
+
 .menu .logo-menu {
 	position:relative;
-	width:60px;
 	top:30px;
 }
 
@@ -69,10 +67,10 @@
 }
 
 .menu-plaatje {
-	width:50px;
+	width:44px;
 	position:absolute;
-	left:30px;
-	top:10px;
+	left:22px;
+	top:12px;
 }
 
 .ui-btn-up-c .menu-plaatje-internetgids {
@@ -102,11 +100,11 @@
 }
 
 .menu .ui-listview>li:nth-child(odd) {
-	background:#e1f6fe;
+	background:#e2f7ff;
 }
 
 .menu-internetgids .ui-listview>li:nth-child(even) {
-	background:#e1f6fe;
+	background:#e2f7ff;
 }
 
 .menu .ui-listview>.ui-li-divider, .menu-internetgids .ui-listview>.ui-li-divider {
@@ -120,7 +118,7 @@
 }
 
 .ui-bar-b {
-    background:#120349 !important;
+    background:#13034b !important;
     padding:18px !important;
     font-size:22px !important;
 }
@@ -138,11 +136,15 @@
 }
 
 .ui-bar-c {
-    background:#120349 !important;
+    background: #13034b !important;
 }
 
-.ui-bar-d {
-    background:#440002 !important;
+.ui-bar-d, .ui-bar-d a:link, .ui-bar-d a:active, .ui-bar-d a:hover, .ui-bar-d a:visited {
+    background:#460002 !important;
+    padding:18px !important;
+    font-size:22px !important;
+    color: white !important;
+    text-decoration: none;
 }
 
 .ui-bar-e, .ui-bar-e a:link, .ui-bar-e a:active, .ui-bar-e a:hover, .ui-bar-e a:visited  {
@@ -167,6 +169,7 @@
 	padding-bottom:4px !important;
 	border-bottom:1px solid white;
 	border-top:1px solid white;
+	text-decoration: none;
 }
 
 .ui-btn-hover-c, ui-btn-hover-c p {
@@ -256,35 +259,57 @@
     border-bottom:1px solid black;
 }
 
-.bakens {
+.single {
+     overflow: hidden;
+     text-align: center;
+     background:#e2f7ff; /*dit is lichtbaluw, dit lichtgeel: #ffffef;*/
+     width:90%;
+     margin:0 auto;
+}
+
+.pagina {
      overflow: hidden;
      text-align: center;
      background:#ffffef;
      width:90%;
      margin:0 auto;
- }
+}
  
-.bakens p.jaargang {
+.single .datum, .pagina .datum {
+	text-align: right;
+	padding:0 15px 0 0;
+	margin:0 0 0 0;
+	color: #13034b;
+	font-size:10px;
+}
+ 
+.single p.jaargang, .pagina p.jaargang {
     position: relative;
     display: inline-block;
     font-size:10px;
     font-family:Georgia;
 }
 
-.bakens .logo-bakens {
+.single .logo-single {
 	position: relative;
     display: inline-block;
     width:150px;
 }
 
-.bakens .logo-bakens-rood {
+.pagina .logo-pagina {
+	position: relative;
+    display: inline-block;
+    padding-bottom: 30px;
+}
+
+.single .logo-single-rood, .pagina .logo-pagina-rood {
 	position: relative;
     display: inline-block;
     width:35px;
     top:-40px;
 }
 
-.bakens p.nummer {
+.single p.nummer, .pagina p.nummer {
     position: relative;
     display: inline-block;
     font-size:10px;
@@ -293,25 +318,29 @@
     font-weight:800;
 }
 
-.bakens p.titel {
+.single p.titel, .pagina p.titel {
     position: relative;
     display: inline-block;
     font-size:22px;
-    top:-35px;
     font-family:Georgia;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #13034b;
 }
 
-.bakens p.subtitel {
-    position: relative;
-    display: inline-block;
-    font-size:15px;
+.single p.subtitel, .pagina p.subtitel {
+    font-size:14px;
     font-style:italic;
-    font-weight:800;
-    top:-50px;
-    font-family:Georgia;
+    font-weight:500;
+    text-align: left;
+    padding: 15px 15px 15px 15px;
 }
 
-.bakens p.inhoud-tekst {
+.single img, .pagina img {
+	max-width:80vw;
+}
+
+.single p.inhoud-tekst, .pagina p.inhoud-tekst {
     position: relative;
     display: inline-block;
     font-size:12px;
@@ -321,7 +350,7 @@
     padding:20px;
 }
 
-.bakens p.inhoud-tekst:first-letter {
+.single p.inhoud-tekst:first-letter {
     color:black;
     font-size:50px;
     padding-right:10px;
@@ -329,7 +358,8 @@
     float:left;
 }
 
-.bakens p.jaargang:before, .bakens p.jaargang:after {
+.single p.jaargang:before, .single p.jaargang:after, 
+.pagina p.jaargang:before, .pagina p.jaargang:after {
     content: '';
     position: absolute;
     top: 50%;
@@ -337,9 +367,110 @@
     width: 120%;
     margin: 0 10px;
 }
-.bakens p.jaargang:before {
+.single p.jaargang:before, .pagina p.jaargang:before {
     right: 100%;
 }
-.bakens p.jaargang:after {
+.single p.jaargang:after, .pagina p.jaargang:after {
     left: 100%;
+}
+
+.single .auteur, .pagina .auteur {
+    color: #13034b;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding-left: 10px;
+	padding-right:10px;
+}
+
+.single .auteur a, .pagina .auteur a {
+	text-decoration: underline;
+    color: #13034b;
+}
+
+p.terug a {
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 14px;
+	color: #13034b;
+}
+
+p.terug {
+		padding:5px 0 4px 0;
+}
+
+.jaargang {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.menu .huidignummer {
+	padding: 0px 10px 0px 5px;
+	line-height: 15px;
+}
+
+.menu-internetgids .titel {
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color:#13034b;
+	line-height: 15px;
+	padding: 12px 12px 5px 0;
+	margin: 0 0 0 0;
+}
+
+.menu-internetgids .auteur {
+	font-style: italic;
+	font-weight: 500;
+	color: #13034b;
+	line-height: 15px;
+	padding: 0 12px 12px 0;
+	margin: 0 0 0 0;
+}
+
+.menu-internetgids .rubriek {
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color:#13034b;
+	text-decoration: none;
+}
+
+.hoofdmenu {
+	color: #13034b;
+	text-decoration: none;
+}
+
+.hoofdmenu p.titel {
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-align: left;
+}
+
+.hoofdmenu p.auteur {
+	font-style: italic;
+	font-weight: 500;
+	text-align: left;
+}
+
+.rubriekLink img {
+	position:relative;
+	display: block;
+	float:left;
+}
+
+.rubriekLink p.titel, .rubriekLink p.auteur {
+	padding-left:80px;
+}
+
+.rubriekLink p.auteur {
+	padding-bottom: 20px;
+}
+
+#rubriekTitel {
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 1px;	
+	color: #13034b;
 }

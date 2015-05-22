@@ -1,0 +1,408 @@
+{
+  "channel": {
+    "name": "Proza",
+    "image": "/system/channels/assets/000/000/005/original/proza-80px.png?1382712269",
+
+    "tags": [
+    {
+      "id": 476,
+      "url": "http://www.de-gids.nl/tag/476.json",
+      "name": "Verhalen",
+      "articles": [
+      {
+        "id": 150274,
+        "url": "http://www.de-gids.nl/artikel/150274.json",
+        "image": "/system/uploads/assets/000/017/038/large/waarschuwingslicht_5Bweb_aangepasteachtergrond_5D.jpg?1427896191",
+        "title": "Brug",
+        "author": "Bart Verbunt"
+      },
+      {
+        "id": 150170,
+        "url": "http://www.de-gids.nl/artikel/150170.json",
+        
+        "title": "Ga weg bij de rand",
+        "author": "Caroline van Keeken"
+      },
+      {
+        "id": 143928,
+        "url": "http://www.de-gids.nl/artikel/143928.json",
+        
+        "title": "Gifkaroo",
+        "author": "Etienne van Heerden"
+      }
+      ]
+    },
+    {
+      "id": 172,
+      "url": "http://www.de-gids.nl/tag/172.json",
+      "name": "Notulen",
+      "articles": [
+      {
+        "id": 149838,
+        "url": "http://www.de-gids.nl/artikel/149838.json",
+        "image": "/system/uploads/assets/000/016/414/large/jente.png?1423648784",
+        "title": "De blauwe man",
+        "author": "Jente Hoogeveen"
+      },
+      {
+        "id": 142125,
+        "url": "http://www.de-gids.nl/artikel/142125.json",
+        
+        "title": "Eekhoorns",
+        "author": "Judith de Leeuw"
+      },
+      {
+        "id": 142123,
+        "url": "http://www.de-gids.nl/artikel/142123.json",
+        
+        "title": "Oude vlammen",
+        "author": "Dirk Vis"
+      }
+      ]
+    },
+    {
+      "id": 1658,
+      "url": "http://www.de-gids.nl/tag/1658.json",
+      "name": "Iedere maandag",
+      "articles": [
+      {
+        "id": 149283,
+        "url": "http://www.de-gids.nl/artikel/149283.json",
+        "image": "/system/uploads/assets/000/015/160/large/556-sytske.jpg?1415739989",
+        "title": "Iedere maandag (7)",
+        "author": "Sytske van Koeveringe"
+      },
+      {
+        "id": 149211,
+        "url": "http://www.de-gids.nl/artikel/149211.json",
+        "image": "/system/uploads/assets/000/015/161/large/78-sytske-kl.jpg?1415740271",
+        "title": "Iedere maandag (6)",
+        "author": "Sytske van Koeveringe"
+      },
+      {
+        "id": 149146,
+        "url": "http://www.de-gids.nl/artikel/149146.json",
+        "image": "/system/uploads/assets/000/015/293/large/iederemaandag-219.png?1416836140",
+        "title": "Iedere maandag (5)",
+        "author": "Sytske van Koeveringe"
+      }
+      ]
+    },
+    {
+      "id": 194,
+      "url": "http://www.de-gids.nl/tag/194.json",
+      "name": "Onder de mensen",
+      "articles": [
+      {
+        "id": 148801,
+        "url": "http://www.de-gids.nl/artikel/148801.json",
+        
+        "title": "Onder de mensen: In de Primera",
+        "author": "Willem Sjoerd van Vliet"
+      },
+      {
+        "id": 148506,
+        "url": "http://www.de-gids.nl/artikel/148506.json",
+        
+        "title": "Onder de mensen: Wij zijn gewoon zoveel verder",
+        "author": "Anne van Duuren"
+      },
+      {
+        "id": 147748,
+        "url": "http://www.de-gids.nl/artikel/147748.json",
+        
+        "title": "Onder de mensen: op Facebook",
+        "author": "Roby van der Aa"
+      }
+      ]
+    },
+    {
+      "id": 1588,
+      "url": "http://www.de-gids.nl/tag/1588.json",
+      "name": "Berichten uit Rotterdam",
+      "articles": [
+      {
+        "id": 148561,
+        "url": "http://www.de-gids.nl/artikel/148561.json",
+        
+        "title": "On Urk",
+        "author": "Matthew Stadler"
+      },
+      {
+        "id": 148465,
+        "url": "http://www.de-gids.nl/artikel/148465.json",
+        
+        "title": "Sparta",
+        "author": "Matthew Stadler"
+      },
+      {
+        "id": 148321,
+        "url": "http://www.de-gids.nl/artikel/148321.json",
+        
+        "title": "The Rotte River",
+        "author": "Matthew Stadler"
+      }
+      ]
+    },
+    {
+      "id": 362,
+      "url": "http://www.de-gids.nl/tag/362.json",
+      "name": "Brieven uit het veld",
+      "articles": [
+      {
+        "id": 148213,
+        "url": "http://www.de-gids.nl/artikel/148213.json",
+        "image": "https://www.de-gids.nl/system/uploads/assets/000/013/682/large/seksalskunde2.png?1406280788",
+        "title": "Hij hoorde mij fluisteren dat hij mij kon krijgen",
+        "author": "Delphine Lecompte"
+      },
+      {
+        "id": 148098,
+        "url": "http://www.de-gids.nl/artikel/148098.json",
+        
+        "title": "Pretty Eyes and the Sea Devil",
+        "author": "Matthew Stadler"
+      },
+      {
+        "id": 147926,
+        "url": "http://www.de-gids.nl/artikel/147926.json",
+        "image": "/system/uploads/assets/000/013/200/large/parijse_20mannen_207.png?1402577622",
+        "title": "Parijse mannen 7: (naam onbekend) ",
+        "author": "Fleur van Greuningen"
+      }
+      ]
+    },
+    {
+      "id": 423,
+      "url": "http://www.de-gids.nl/tag/423.json",
+      "name": "Gesproken woord",
+      "articles": [
+      {
+        "id": 143921,
+        "url": "http://www.de-gids.nl/artikel/143921.json",
+        "image": "../../../system/uploads/assets/000/008/166/original/43926-346-480.jpg",
+        "title": "Als twee druppels water",
+        "author": "Roel Bentz van den Berg"
+      },
+      {
+        "id": 142866,
+        "url": "http://www.de-gids.nl/artikel/142866.json",
+        
+        "title": "Vergeten jubil\u00e9\u2019s",
+        "author": "Willem Otterspeer"
+      },
+      {
+        "id": 142811,
+        "url": "http://www.de-gids.nl/artikel/142811.json",
+        
+        "title": "Schelden is lekker, schelden is fijn",
+        "author": "Xandra Schutte"
+      }
+      ]
+    },
+    {
+      "id": 380,
+      "url": "http://www.de-gids.nl/tag/380.json",
+      "name": "...en de kunst",
+      "articles": [
+      {
+        "id": 143756,
+        "url": "http://www.de-gids.nl/artikel/143756.json",
+        "image": "../../../system/uploads/assets/000/008/082/original/geel2.jpg?1361526731",
+        "title": "Geel ongeverfd",
+        "author": "Bianca Stigter"
+      },
+      {
+        "id": 143240,
+        "url": "http://www.de-gids.nl/artikel/143240.json",
+        "image": "../../../system/uploads/assets/000/007/550/original/001._20Rothko_20Black_20on_20Maroon.jpg?1355232809",
+        "title": "Technicolor in de jungle",
+        "author": "Peter Delpeut"
+      },
+      {
+        "id": 142533,
+        "url": "http://www.de-gids.nl/artikel/142533.json",
+        "image": "http://www.mariettehaveman.com/waterhouse%20mermaid.jpg",
+        "title": "De meermin en de kunst",
+        "author": "Mari\u00ebtte Haveman"
+      }
+      ]
+    },
+    {
+      "id": 418,
+      "url": "http://www.de-gids.nl/tag/418.json",
+      "name": "Korte Arabesken",
+      "articles": [
+      {
+        "id": 143108,
+        "url": "http://www.de-gids.nl/artikel/143108.json",
+        
+        "title": "Korte Arabesk: Onder de doden",
+        "author": "Gamal Eldin Fouad"
+      },
+      {
+        "id": 142803,
+        "url": "http://www.de-gids.nl/artikel/142803.json",
+        
+        "title": "Korte Arabesk: De kraamafdeling",
+        "author": "Thomas Heerma van Voss"
+      },
+      {
+        "id": 142805,
+        "url": "http://www.de-gids.nl/artikel/142805.json",
+        
+        "title": "Korte Arabesken: De oude Trofime",
+        "author": "Louis Couperus"
+      }
+      ]
+    },
+    {
+      "id": 366,
+      "url": "http://www.de-gids.nl/tag/366.json",
+      "name": "Greyland",
+      "articles": [
+      {
+        "id": 142978,
+        "url": "http://www.de-gids.nl/artikel/142978.json",
+        
+        "title": "Greyland: Sohrab",
+        "author": "Willem Sjoerd van Vliet"
+      },
+      {
+        "id": 142862,
+        "url": "http://www.de-gids.nl/artikel/142862.json",
+        
+        "title": "Greyland: Sogol",
+        "author": "Antje Visser"
+      },
+      {
+        "id": 142512,
+        "url": "http://www.de-gids.nl/artikel/142512.json",
+        
+        "title": "Greyland: Mahmoud",
+        "author": "Dirk Vis"
+      }
+      ]
+    },
+    {
+      "id": 383,
+      "url": "http://www.de-gids.nl/tag/383.json",
+      "name": "ZKV's uit de hindi-literatuur",
+      "articles": [
+      {
+        "id": 142563,
+        "url": "http://www.de-gids.nl/artikel/142563.json",
+        
+        "title": "Drie ZKVs uit de Hindi-literatuur II",
+        "author": "Lodewijk Brunt en Dick Plukker"
+      }
+      ]
+    },
+    {
+      "id": 382,
+      "url": "http://www.de-gids.nl/tag/382.json",
+      "name": "Was will das Weib?",
+      "articles": [
+      {
+        "id": 142542,
+        "url": "http://www.de-gids.nl/artikel/142542.json",
+        "image": "/wp-content/uploads/2012/04/man_vrouw3slapen2-300x212.png",
+        "title": "Was will das Weib?",
+        "author": "Fleur van Greuningen"
+      },
+      {
+        "id": 142539,
+        "url": "http://www.de-gids.nl/artikel/142539.json",
+        
+        "title": "Was will das Weib?",
+        "author": ""
+      },
+      {
+        "id": 142536,
+        "url": "http://www.de-gids.nl/artikel/142536.json",
+        
+        "title": "Was will das Weib?",
+        "author": ""
+      }
+      ]
+    },
+    {
+      "id": 267,
+      "url": "http://www.de-gids.nl/tag/267.json",
+      "name": "Gemeenschap & Goederen",
+      "articles": [
+      {
+        "id": 142496,
+        "url": "http://www.de-gids.nl/artikel/142496.json",
+        "image": "/wp-content/uploads/2011/09/Illustratie-Thomas1-300x200.jpg",
+        "title": "Gemeenschap en Goederen VIII",
+        "author": "Thomas Heerma van Voss"
+      },
+      {
+        "id": 142489,
+        "url": "http://www.de-gids.nl/artikel/142489.json",
+        "image": "/wp-content/uploads/2011/09/Illustratie-Daan-225x300.jpg",
+        "title": "Gemeenschap en Goederen VII",
+        "author": "Daan Heerma van Voss"
+      },
+      {
+        "id": 142453,
+        "url": "http://www.de-gids.nl/artikel/142453.json",
+        "image": "/wp-content/uploads/2011/09/Illustratie-Thomas1-300x200.jpg",
+        "title": "Gemeenschap en Goederen VI",
+        "author": "Thomas Heerma van Voss"
+      }
+      ]
+    },
+    {
+      "id": 266,
+      "url": "http://www.de-gids.nl/tag/266.json",
+      "name": "Scherven",
+      "articles": [
+      {
+        "id": 142445,
+        "url": "http://www.de-gids.nl/artikel/142445.json",
+        
+        "title": "Scherven: Pindarus",
+        "author": "Jacob Zwaan"
+      },
+      {
+        "id": 142491,
+        "url": "http://www.de-gids.nl/artikel/142491.json",
+        
+        "title": "Scherven: Aeschylus",
+        "author": "Jacob Zwaan"
+      }
+      ]
+    },
+    {
+      "id": 268,
+      "url": "http://www.de-gids.nl/tag/268.json",
+      "name": "Op basis van een waargebeurd verhaal",
+      "articles": [
+      {
+        "id": 142498,
+        "url": "http://www.de-gids.nl/artikel/142498.json",
+        "image": "/wp-content/uploads/2012/01/maartje.jpg",
+        "title": "Rustige jaarwisseling",
+        "author": "Maartje Wortel"
+      },
+      {
+        "id": 142452,
+        "url": "http://www.de-gids.nl/artikel/142452.json",
+        "image": "/wp-content/uploads/2011/12/vk.jpg",
+        "title": "Galgenmaal wordt wat de pot schaft",
+        "author": "Maartje Wortel"
+      },
+      {
+        "id": 142428,
+        "url": "http://www.de-gids.nl/artikel/142428.json",
+        "image": "/wp-content/uploads/2011/10/roma.jpg",
+        "title": "VN bezorgd om Roma in Frankrijk",
+        "author": "Maartje Wortel"
+      }
+      ]
+    }
+    ]
+  }
+}
